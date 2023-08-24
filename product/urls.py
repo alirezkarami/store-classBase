@@ -1,10 +1,9 @@
 from django.urls import path, include
 from . import views
-
 urlpatterns = [
-    path('category/', views.CategoryApi.as_view()),
-    path('category/<int:category_id>', views.CategoryApi.as_view()),
-    path('product/', views.ProductApi.as_view()),
-    path('product/<int:product_id>', views.ProductApi.as_view())
+    path('product/', views.ProductListGenericApiView.as_view()),
+    path('product/<pk>', views.ProductGenericApiView.as_view()),
+    path('category/', views.CategoryListGenericApiView.as_view()),
+    path('category/<pk>', views.CategoryListGenericApiView.as_view()),
 
 ]
